@@ -1,0 +1,29 @@
+package com.example.navigationcomponent
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.Navigation
+import com.example.navigationcomponent.databinding.FragmentOyunEkraniBinding
+import com.example.navigationcomponent.databinding.FragmentSonucEkraniBinding
+
+
+class SonucEkraniFragment : Fragment() {
+    private lateinit var tasarim: FragmentSonucEkraniBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        tasarim = FragmentSonucEkraniBinding.inflate(inflater, container, false)
+
+
+        tasarim.buttonBitir2.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.SayfaYGecis)
+        }
+
+
+        return tasarim.root
+    }
+
+}
